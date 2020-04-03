@@ -7,17 +7,19 @@
             {% csrf_token %}
             <fieldset>
             <div class="name text-center">__Detect__</div><br/>
-            <span class="name">Name: </span><input type="text"><br/><br/>
+            <span class="name">Name: </span><input type="text" name="labelname"><br/><br/>
             <span class="name">Upload_image: <input type="file" name='detectimage'></span><br/><br/>
             <button class="btn-md btn-outline-primary" type="submit">Detect</button>
             </fieldset>
         </form>
     </div>
     <div class="col-md-6">
+        {% if url == "camera" %}
          <div class="details">
          <div class="name text-center">Showing results for the missing person</div><br/>
          <div class="text-center name">{{result}}</div>
          </div>
+         {% endif %}
     </div>
     </div>
 {% endblock %}
